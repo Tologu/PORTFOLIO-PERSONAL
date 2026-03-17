@@ -29,6 +29,7 @@
   border: 2px solid transparent;
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
 .project-card:hover {
@@ -88,4 +89,120 @@
   background: #2C4563;
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(59, 126, 92, 0.4);
+}
+
+.world-cup-orbit {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.world-cup-ball {
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  display: block;
+  object-fit: contain;
+  background: transparent;
+  box-shadow: none;
+  filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.25));
+  opacity: 0;
+  animation: world-cup-orbit 8s linear infinite;
+  animation-play-state: paused;
+  transition: opacity 0.25s ease;
+}
+
+.ball-two {
+  animation-delay: -4s;
+}
+
+.world-cup-card:hover .world-cup-ball,
+.world-cup-card:focus-within .world-cup-ball {
+  opacity: 1;
+  animation-play-state: running;
+}
+
+.pharma-loader {
+  position: relative;
+  width: 100%;
+  height: 74px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0.25rem 0 1.5rem;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(-4px) scale(0.96);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.pharma-pill {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  display: block;
+  object-fit: contain;
+  background: transparent;
+  box-shadow: none;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.18));
+  animation: pharma-pill-spin 2.3s linear infinite;
+  animation-play-state: paused;
+}
+
+.pharma-card:hover .pharma-loader,
+.pharma-card:focus-within .pharma-loader {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.pharma-card:hover .pharma-pill,
+.pharma-card:focus-within .pharma-pill {
+  animation-play-state: running;
+}
+
+@keyframes world-cup-orbit {
+  0% {
+    top: 0%;
+    left: 0%;
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  25% {
+    top: 0%;
+    left: 100%;
+    transform: translate(-50%, -50%) rotate(180deg);
+  }
+  50% {
+    top: 100%;
+    left: 100%;
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+  75% {
+    top: 100%;
+    left: 0%;
+    transform: translate(-50%, -50%) rotate(540deg);
+  }
+  100% {
+    top: 0%;
+    left: 0%;
+    transform: translate(-50%, -50%) rotate(720deg);
+  }
+}
+
+@keyframes pharma-pill-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .world-cup-ball {
+    animation: none;
+  }
+
+  .pharma-pill {
+    animation: none;
+  }
 }

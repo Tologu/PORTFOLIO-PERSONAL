@@ -41,9 +41,41 @@ const Projects: React.FC = () => {
       <h2 className="section-title">Mis Proyectos</h2>
       <div className="projects-grid">
         {projects.map(project => (
-          <div key={project.id} className="project-card">
+          <div
+            key={project.id}
+            className={`project-card ${project.id === 1 ? 'world-cup-card' : ''} ${project.id === 3 ? 'pharma-card' : ''}`}
+          >
+            {project.id === 1 && (
+              <div className="world-cup-orbit" aria-hidden="true">
+                <img
+                  src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/26bd.svg"
+                  alt=""
+                  className="world-cup-ball ball-one"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <img
+                  src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/26bd.svg"
+                  alt=""
+                  className="world-cup-ball ball-two"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+            )}
             <h3 className="project-title">{project.title}</h3>
             <p className="project-description">{project.description}</p>
+            {project.id === 3 && (
+              <div className="pharma-loader" aria-hidden="true">
+                <img
+                  src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f48a.svg"
+                  alt=""
+                  className="pharma-pill"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+            )}
             <div className="project-tech">
               {project.technologies.map((tech, index) => (
                 <span key={index} className="tech-badge">{tech}</span>
