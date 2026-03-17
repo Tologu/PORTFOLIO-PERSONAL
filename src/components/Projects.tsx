@@ -32,7 +32,7 @@ const Projects: React.FC = () => {
       id: 3,
       title: 'E-commerce de Parafarmacia',
       description: 'Proyecto en desarrollo de una tienda online de parafarmacia con catálogo de productos, pagos seguros y gestión moderna del backend.',
-      technologies: ['TypeScript', 'Next.js', 'Tailwind CSS', 'Medusa.js', 'Supabase', 'Stripe']
+      technologies: ['TypeScript', 'Next.js', 'React', 'Tailwind CSS', 'Medusa.js', 'Supabase', 'Stripe']
     },
   ];
 
