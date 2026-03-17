@@ -76,7 +76,7 @@ const Hero: React.FC = () => {
             <div className="hero-image-placeholder">
               {!imageError ? (
                 <img 
-                  src="/images/portrait.png" 
+                  src="images/portrait.png" 
                   alt="Tomas" 
                   className="hero-image"
                   onError={() => setImageError(true)}

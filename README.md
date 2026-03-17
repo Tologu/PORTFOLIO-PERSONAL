@@ -78,6 +78,11 @@ src/
 4. **Enlaces sociales:**
    - Actualiza los enlaces de GitHub, LinkedIn y Email en Contact
 
+5. **Formulario de contacto:**
+   - El formulario está configurado con FormSubmit para enviar mensajes a `webdev.tomaslopezgutierrez@gmail.com`
+   - La primera vez que se use en producción, FormSubmit enviará un correo de activación a esa cuenta
+   - Debes abrir ese correo y confirmar la activación para que los siguientes mensajes lleguen correctamente
+
 ## 🌐 Despliegue
 
 Algunas opciones para publicar tu portfolio:

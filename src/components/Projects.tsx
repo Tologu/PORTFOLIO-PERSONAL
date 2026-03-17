@@ -15,7 +15,7 @@ const Projects: React.FC = () => {
     {
       id: 1,
       title: 'Mundial 2026',
-      description: 'Proyecto de "Porra" de desarrollo web para el Mundial 2026.',
+      description: 'Mi primer proyecto de desarrollo web para una "Porra" del Mundial 2026. Diseño sencillo y con las tecnologías básicas de frontend. Fue un proyecto divertido para practicar mis habilidades y compartirlas con familiares y amigos.  ',
       technologies: ['HTML', 'CSS', 'JavaScript'],
       link: 'https://tologu.github.io/Mundial2026/',
       github: 'https://github.com/Tologu/Mundial2026'
@@ -30,11 +30,9 @@ const Projects: React.FC = () => {
     },
     {
       id: 3,
-      title: 'Proyecto 3',
-      description: 'Descripción de tu tercer proyecto. Incluye tecnologías, aprendizajes y resultados.',
-      technologies: ['React', 'Node.js', 'MongoDB'],
-      link: '#',
-      github: '#'
+      title: 'E-commerce de Parafarmacia',
+      description: 'Proyecto en desarrollo de una tienda online de parafarmacia con catálogo de productos, pagos seguros y gestión moderna del backend.',
+      technologies: ['TypeScript', 'Next.js', 'Tailwind CSS', 'Medusa.js', 'Supabase', 'Stripe']
     },
   ];
 
@@ -52,7 +50,7 @@ const Projects: React.FC = () => {
               ))}
             </div>
             <div className="project-links">
-              {project.link && <a href={project.link} className="project-link">Ver live</a>}
+              {project.link && <a href={project.link} className="project-link">Ver página</a>}
               {project.github && <a href={project.github} className="project-link">GitHub</a>}
             </div>
           </div>

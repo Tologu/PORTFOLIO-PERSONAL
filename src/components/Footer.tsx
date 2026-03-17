@@ -8,7 +8,7 @@ const Footer: React.FC = () => {
     <footer className="footer">
       <div className="footer-content">
         <p>&copy; {currentYear} Tomas Dev. Todos los derechos reservados.</p>
-        <p>Hecho con ❤️ usando React + Vite</p>
+
       </div>
     </footer>
   );
