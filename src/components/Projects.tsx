@@ -22,11 +22,11 @@ const Projects: React.FC = () => {
     },
     {
       id: 2,
-      title: 'Proyecto 2',
-      description: 'Descripción de tu segundo proyecto. Destaca los puntos clave y las características principales.',
-      technologies: ['JavaScript', 'HTML', 'CSS'],
-      link: '#',
-      github: '#'
+      title: 'Juego del 31',
+      description: 'Implementación digital del clásico juego de cartas "31" utilizando la baraja española. El proyecto consiste en un simulador de turnos que gestiona la lógica de juego, el cálculo dinámico de puntuaciones basado en palos y una inteligencia artificial para oponentes virtuales',
+      technologies: ['React', 'TypeScript', 'Vite', 'CSS'],
+      link: 'https://tologu.github.io/Juego31/',
+      github: 'https://github.com/Tologu/Juego31'
     },
     {
       id: 3,
@@ -43,7 +43,7 @@ const Projects: React.FC = () => {
         {projects.map(project => (
           <div
             key={project.id}
-            className={`project-card ${project.id === 1 ? 'world-cup-card' : ''} ${project.id === 3 ? 'pharma-card' : ''}`}
+            className={`project-card ${project.id === 1 ? 'world-cup-card' : ''} ${project.id === 2 ? 'cards-game-card' : ''} ${project.id === 3 ? 'pharma-card' : ''}`}
           >
             {project.id === 1 && (
               <div className="world-cup-orbit" aria-hidden="true">
@@ -65,6 +65,20 @@ const Projects: React.FC = () => {
             )}
             <h3 className="project-title">{project.title}</h3>
             <p className="project-description">{project.description}</p>
+            {project.id === 2 && (
+              <div className="cards-mark" aria-hidden="true">
+                <div className="deck-card red-card">
+                  <span className="card-rank">7</span>
+                  <span className="card-center-suit">♥</span>
+                  <span className="card-suit">♥</span>
+                </div>
+                <div className="deck-card black-card">
+                  <span className="card-rank">A</span>
+                  <span className="card-center-suit">♠</span>
+                  <span className="card-suit">♠</span>
+                </div>
+              </div>
+            )}
             {project.id === 3 && (
               <div className="pharma-loader" aria-hidden="true">
                 <img

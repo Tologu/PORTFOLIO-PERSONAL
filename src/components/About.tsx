@@ -7,15 +7,18 @@ const About: React.FC = () => {
       <h2 className="section-title">Sobre mí</h2>
       <div className="about-content">
         <div className="about-text">
-          <p>
-            Soy estudiante de Desarrollo de Aplicaciones Web (DAW) con pasión por crear aplicaciones
-            web modernas y funcionales. Tengo experiencia en frontend y estoy expandiendo mis 
-            habilidades en backend.
-          </p>
-          <p>
-            Mi objetivo es desarrollar soluciones innovadoras que resuelvan problemas reales y 
-            proporcionen una excelente experiencia de usuario.
-          </p>
+            <p>
+              Soy estudiante de Desarrollo de Aplicaciones Web (DAW) con pasión por crear aplicaciones web modernas y funcionales. Tengo experiencia en frontend y estoy expandiendo mis habilidades en backend.
+            </p>
+            <p>
+              Además, cuento con una sólida trayectoria en el sector administrativo, habiendo trabajado en Gestoría/Asesoría, Ayuntamiento, Tesorería General de la Seguridad Social y actualmente en la Subdelegación del Gobierno en Cádiz. Esta experiencia me ha permitido desarrollar habilidades organizativas, de gestión y trabajo en equipo.
+            </p>
+            <p>
+              Aunque valoro mi recorrido profesional, busco una oportunidad para crecer en el sector tecnológico, donde pueda aportar mi experiencia previa y seguir aprendiendo y desarrollándome como desarrollador.
+            </p>
+            <p>
+              Mi objetivo es desarrollar soluciones innovadoras que resuelvan problemas reales y proporcionen una excelente experiencia de usuario.
+            </p>
         </div>
         <div className="skills">
           <h3>Habilidades</h3>

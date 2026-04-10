@@ -160,6 +160,87 @@
   animation-play-state: running;
 }
 
+.cards-mark {
+  position: relative;
+  width: 100%;
+  height: 74px;
+  margin: 0.25rem 0 1.5rem;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(-4px) scale(0.96);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.deck-card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 48px;
+  height: 66px;
+  border-radius: 10px;
+  background: #ffffff;
+  border: 2px solid #d8dde4;
+  box-shadow: 0 8px 20px rgba(44, 69, 99, 0.18);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 6px 7px;
+  font-weight: 700;
+  line-height: 1;
+  overflow: hidden;
+}
+
+.card-rank {
+  font-size: 0.9rem;
+}
+
+.card-suit {
+  font-size: 1rem;
+  align-self: flex-end;
+  transform: rotate(180deg);
+}
+
+.card-center-suit {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.35rem;
+  opacity: 0.9;
+}
+
+.red-card {
+  color: #c0392b;
+  transform: translate(-72%, -50%) rotate(-14deg);
+  z-index: 2;
+  animation: card-float-left 2.6s ease-in-out infinite;
+  animation-play-state: paused;
+}
+
+.black-card {
+  color: #1f2937;
+  transform: translate(-12%, -50%) rotate(10deg);
+  z-index: 1;
+  animation: card-float-right 2.6s ease-in-out infinite;
+  animation-delay: -1.3s;
+  animation-play-state: paused;
+}
+
+.cards-game-card:hover .cards-mark,
+.cards-game-card:focus-within .cards-mark {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.cards-game-card:hover .red-card,
+.cards-game-card:hover .black-card,
+.cards-game-card:focus-within .red-card,
+.cards-game-card:focus-within .black-card {
+  animation-play-state: running;
+}
+
 @keyframes world-cup-orbit {
   0% {
     top: 0%;
@@ -197,12 +278,37 @@
   }
 }
 
+@keyframes card-float-left {
+  0%,
+  100% {
+    transform: translate(-72%, -50%) rotate(-14deg) translateY(0);
+  }
+  50% {
+    transform: translate(-72%, -50%) rotate(-14deg) translateY(-5px);
+  }
+}
+
+@keyframes card-float-right {
+  0%,
+  100% {
+    transform: translate(-12%, -50%) rotate(10deg) translateY(0);
+  }
+  50% {
+    transform: translate(-12%, -50%) rotate(10deg) translateY(5px);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .world-cup-ball {
     animation: none;
   }
 
   .pharma-pill {
+    animation: none;
+  }
+
+  .red-card,
+  .black-card {
     animation: none;
   }
 }
