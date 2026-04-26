@@ -1,6 +1,10 @@
 import React from 'react';
 import '../styles/Projects.css';
 
+interface ProjectsProps {
+  onShowAll?: () => void;
+}
+
 interface Project {
   id: number;
   title: string;
@@ -10,7 +14,7 @@ interface Project {
   github?: string;
 }
 
-const Projects: React.FC = () => {
+const Projects: React.FC<ProjectsProps> = ({ onShowAll }) => {
   const projects: Project[] = [
     {
       id: 1,
@@ -102,6 +106,13 @@ const Projects: React.FC = () => {
           </div>
         ))}
       </div>
+      {onShowAll && (
+        <div className="projects-more">
+          <button className="more-projects-btn" onClick={onShowAll}>
+            Más proyectos
+          </button>
+        </div>
+      )}
     </section>
   );
 };
