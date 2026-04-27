@@ -2,13 +2,13 @@
   position: fixed;
   top: 0;
   width: 100%;
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
+  background: rgba(232, 220, 200, 0.92);
+  backdrop-filter: blur(12px);
   color: #2c3e50;
   padding: 1.5rem 0;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 12px rgba(44, 69, 99, 0.1);
   z-index: 1000;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid rgba(59, 126, 92, 0.15);
 }
 
 .header-container {
