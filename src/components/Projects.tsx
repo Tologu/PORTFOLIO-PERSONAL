@@ -1,4 +1,5 @@
 import React from 'react';
+import { useLanguage } from '../i18n/LanguageContext';
 import '../styles/Projects.css';
 
 interface ProjectsProps {
@@ -6,43 +7,37 @@ interface ProjectsProps {
 }
 
 interface Project {
-  id: number;
-  title: string;
-  description: string;
+  id: 1 | 2 | 3;
   technologies: string[];
   link?: string;
   github?: string;
 }
 
 const Projects: React.FC<ProjectsProps> = ({ onShowAll }) => {
+  const { t } = useLanguage();
+
   const projects: Project[] = [
     {
       id: 1,
-      title: 'Mundial 2026',
-      description: 'Mi primer proyecto de desarrollo web para una "Porra" del Mundial 2026. Diseño sencillo y con las tecnologías básicas de frontend. Fue un proyecto divertido para practicar mis habilidades y compartirlas con familiares y amigos.  ',
       technologies: ['HTML', 'CSS', 'JavaScript'],
       link: 'https://tologu.github.io/Mundial2026/',
-      github: 'https://github.com/Tologu/Mundial2026'
+      github: 'https://github.com/Tologu/Mundial2026',
     },
     {
       id: 2,
-      title: 'Juego del 31',
-      description: 'Implementación digital del clásico juego de cartas "31" utilizando la baraja española. El proyecto consiste en un simulador de turnos que gestiona la lógica de juego, el cálculo dinámico de puntuaciones basado en palos y una inteligencia artificial para oponentes virtuales',
       technologies: ['React', 'TypeScript', 'Vite', 'CSS'],
       link: 'https://tologu.github.io/Juego31/',
-      github: 'https://github.com/Tologu/Juego31'
+      github: 'https://github.com/Tologu/Juego31',
     },
     {
       id: 3,
-      title: 'E-commerce de Parafarmacia',
-      description: 'Proyecto en desarrollo de una tienda online de parafarmacia con catálogo de productos, pagos seguros y gestión moderna del backend.',
-      technologies: ['TypeScript', 'Next.js', 'React', 'Tailwind CSS', 'Medusa.js', 'Supabase', 'Stripe']
+      technologies: ['TypeScript', 'Next.js', 'React', 'Tailwind CSS', 'Medusa.js', 'Supabase', 'Stripe'],
     },
   ];
 
   return (
     <section id="projects" className="projects">
-      <h2 className="section-title">Mis Proyectos</h2>
+      <h2 className="section-title">{t.projects.title}</h2>
       <div className="projects-grid">
         {projects.map(project => (
           <div
@@ -67,8 +62,8 @@ const Projects: React.FC<ProjectsProps> = ({ onShowAll }) => {
                 />
               </div>
             )}
-            <h3 className="project-title">{project.title}</h3>
-            <p className="project-description">{project.description}</p>
+            <h3 className="project-title">{t.projects.items[project.id].title}</h3>
+            <p className="project-description">{t.projects.items[project.id].description}</p>
             {project.id === 2 && (
               <div className="cards-mark" aria-hidden="true">
                 <div className="deck-card red-card">
@@ -100,7 +95,7 @@ const Projects: React.FC<ProjectsProps> = ({ onShowAll }) => {
               ))}
             </div>
             <div className="project-links">
-              {project.link && <a href={project.link} className="project-link">Ver página</a>}
+              {project.link && <a href={project.link} className="project-link">{t.projects.viewPage}</a>}
               {project.github && <a href={project.github} className="project-link">GitHub</a>}
             </div>
           </div>
@@ -109,7 +104,7 @@ const Projects: React.FC<ProjectsProps> = ({ onShowAll }) => {
       {onShowAll && (
         <div className="projects-more">
           <button className="more-projects-btn" onClick={onShowAll}>
-            Más proyectos
+            {t.projects.moreProjects}
           </button>
         </div>
       )}

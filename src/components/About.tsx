@@ -1,27 +1,22 @@
 import React from 'react';
+import { useLanguage } from '../i18n/LanguageContext';
 import '../styles/About.css';
 
 const About: React.FC = () => {
+  const { t } = useLanguage();
+
   return (
     <section id="about" className="about">
-      <h2 className="section-title">Sobre mí</h2>
+      <h2 className="section-title">{t.about.title}</h2>
       <div className="about-content">
         <div className="about-text">
-            <p>
-              Soy estudiante de Desarrollo de Aplicaciones Web (DAW) con pasión por crear aplicaciones web modernas y funcionales. Tengo experiencia en frontend y estoy expandiendo mis habilidades en backend.
-            </p>
-            <p>
-              Además, cuento con una sólida trayectoria en el sector administrativo, habiendo trabajado en Gestoría/Asesoría, Ayuntamiento, Tesorería General de la Seguridad Social y actualmente en la Subdelegación del Gobierno en Cádiz. Esta experiencia me ha permitido desarrollar habilidades organizativas, de gestión y trabajo en equipo.
-            </p>
-            <p>
-              Aunque valoro mi recorrido profesional, busco una oportunidad para crecer en el sector tecnológico, donde pueda aportar mi experiencia previa y seguir aprendiendo y desarrollándome como desarrollador.
-            </p>
-            <p>
-              Mi objetivo es desarrollar soluciones innovadoras que resuelvan problemas reales y proporcionen una excelente experiencia de usuario.
-            </p>
+          <p>{t.about.p1}</p>
+          <p>{t.about.p2}</p>
+          <p>{t.about.p3}</p>
+          <p>{t.about.p4}</p>
         </div>
         <div className="skills">
-          <h3>Habilidades</h3>
+          <h3>{t.about.skills}</h3>
           <ul className="skills-list">
             <li>HTML5 & CSS3</li>
             <li>JavaScript & TypeScript</li>

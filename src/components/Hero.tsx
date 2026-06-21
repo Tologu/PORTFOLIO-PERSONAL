@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
+import { useLanguage } from '../i18n/LanguageContext';
 import '../styles/Hero.css';
 
 const Hero: React.FC = () => {
+  const { t } = useLanguage();
   const [imageError, setImageError] = useState(false);
 
   const scrollToSection = (id: string) => {
@@ -11,7 +13,6 @@ const Hero: React.FC = () => {
 
   return (
     <section id="hero" className="hero">
-      {/* Objetos flotantes en el fondo */}
       <div className="hero-bg">
         <div className="floating-object circle obj1" />
         <div className="floating-object circle obj2" />
@@ -31,7 +32,6 @@ const Hero: React.FC = () => {
         </div>
       </div>
       <div className="hero-container">
-        {/* Left Column */}
         <div className="hero-left">
           <div className="hero-social">
             <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="social-icon" title="LinkedIn">
@@ -48,23 +48,20 @@ const Hero: React.FC = () => {
 
           <div className="hero-content">
             <h1 className="hero-title">Tomás</h1>
-            <p className="hero-subtitle">Desarrollador Web & Estudiante DAW</p>
-            <p className="hero-description">
-              Creo experiencias web modernas, funcionales e innovadoras. Apasionado por React, TypeScript y tecnologías web de vanguardia.
-            </p>
+            <p className="hero-subtitle">{t.hero.subtitle}</p>
+            <p className="hero-description">{t.hero.description}</p>
 
             <div className="hero-buttons">
               <button className="btn btn-primary" onClick={() => scrollToSection('contact')}>
-                Conectemos
+                {t.hero.connect}
               </button>
               <button className="btn btn-outline" onClick={() => scrollToSection('projects')}>
-                Ver mis proyectos
+                {t.hero.viewProjects}
               </button>
             </div>
           </div>
         </div>
 
-        {/* Right Column */}
         <div className="hero-right">
           <div className="hero-image-wrapper">
             <div className="hero-image-placeholder">
@@ -81,8 +78,8 @@ const Hero: React.FC = () => {
                     <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
                     <circle cx="12" cy="7" r="4"></circle>
                   </svg>
-                  <p>Imagen pendiente</p>
-                  <span>Coloca portrait.png en public/images/</span>
+                  <p>{t.hero.imagePending}</p>
+                  <span>{t.hero.imageHint}</span>
                 </div>
               )}
             </div>

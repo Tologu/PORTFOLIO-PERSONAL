@@ -11,18 +11,20 @@ import AllProjects from './pages/AllProjects'
 function App() {
   const [showAllProjects, setShowAllProjects] = useState(false)
 
-  if (showAllProjects) {
-    return <AllProjects onBack={() => { setShowAllProjects(false); window.scrollTo({ top: 0, behavior: 'smooth' }) }} />
-  }
-
   return (
     <>
       <Header />
-      <Hero />
-      <Projects onShowAll={() => { setShowAllProjects(true); window.scrollTo({ top: 0, behavior: 'smooth' }) }} />
-      <About />
-      <Contact />
-      <Footer />
+      {showAllProjects ? (
+        <AllProjects onBack={() => { setShowAllProjects(false); window.scrollTo({ top: 0, behavior: 'smooth' }) }} />
+      ) : (
+        <>
+          <Hero />
+          <Projects onShowAll={() => { setShowAllProjects(true); window.scrollTo({ top: 0, behavior: 'smooth' }) }} />
+          <About />
+          <Contact />
+          <Footer />
+        </>
+      )}
     </>
   )
 }
