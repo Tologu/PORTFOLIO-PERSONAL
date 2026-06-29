@@ -1,4 +1,5 @@
 import React from 'react';
+import { featuredProjects } from '../data/projects';
 import { useLanguage } from '../i18n/LanguageContext';
 import '../styles/Projects.css';
 
@@ -6,34 +7,9 @@ interface ProjectsProps {
   onShowAll?: () => void;
 }
 
-interface Project {
-  id: 1 | 2 | 3;
-  technologies: string[];
-  link?: string;
-  github?: string;
-}
-
 const Projects: React.FC<ProjectsProps> = ({ onShowAll }) => {
   const { t } = useLanguage();
-
-  const projects: Project[] = [
-    {
-      id: 1,
-      technologies: ['HTML', 'CSS', 'JavaScript'],
-      link: 'https://tologu.github.io/Mundial2026/',
-      github: 'https://github.com/Tologu/Mundial2026',
-    },
-    {
-      id: 2,
-      technologies: ['React', 'TypeScript', 'Vite', 'CSS'],
-      link: 'https://tologu.github.io/Juego31/',
-      github: 'https://github.com/Tologu/Juego31',
-    },
-    {
-      id: 3,
-      technologies: ['TypeScript', 'Next.js', 'React', 'Tailwind CSS', 'Medusa.js', 'Supabase', 'Stripe'],
-    },
-  ];
+  const projects = featuredProjects;
 
   return (
     <section id="projects" className="projects">
