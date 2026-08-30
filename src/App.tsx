@@ -11,9 +11,21 @@ import AllProjects from './pages/AllProjects'
 function App() {
   const [showAllProjects, setShowAllProjects] = useState(false)
 
+  const goHome = (id = 'hero') => {
+    if (showAllProjects) {
+      setShowAllProjects(false)
+      window.setTimeout(() => {
+        document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
+      }, 50)
+      return
+    }
+
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
+  }
+
   return (
     <>
-      <Header />
+      <Header onNavigate={goHome} />
       {showAllProjects ? (
         <AllProjects onBack={() => { setShowAllProjects(false); window.scrollTo({ top: 0, behavior: 'smooth' }) }} />
       ) : (
